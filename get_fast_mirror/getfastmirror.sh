@@ -86,7 +86,7 @@ else
 	echo -e "Network is good.\n"
 	test -f $SOURCES_MIRRORS_FILE
 	if [ "$?" != "0" ]; then  
-		wget -q -O- https://launchpad.net/ubuntu/+archivemirrors | grep -P -B8 "status(UP|SIX)" | grep -o -P "(f|ht)tp.*\"" > $SOURCES_MIRRORS_FILE	
+		wget -q -O- https://launchpad.net/ubuntu/+archivemirrors | grep -P -B8 "status(UP|SIX)" | grep -o -P "(f|ht)tp(s)?:[^\"]+" 
 	fi
 
 	if [ "$?" != "0" ]; then  
