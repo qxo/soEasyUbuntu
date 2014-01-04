@@ -27,7 +27,7 @@ function test_mirror_speed()	#
 
     cat $SOURCES_MIRRORS_FILE | while read mirror
 	do
-		if [ "$mirror" != "" ]; then
+		if [ "$mirror" != "" ] && [[ "$mirror" != "#"* ]] ; then
 			echo -e "Ping $mirror \c"
 			local mirror_host=`echo $mirror | cut -d '/' -f3`	#change mirror_url to host
 	
