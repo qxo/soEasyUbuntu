@@ -1,3 +1,8 @@
+#china mirror site:  wget -q -O- https://launchpad.net/ubuntu/+archivemirrors |  grep -A 100000 "<th [^>]*>\s*China\s*<" | grep  -m 1 -B 100000 "<tr class=\"head\"[^>]*>" | grep -P -B8 "status(UP|SIX)" | grep -o -P "(f|ht)tp(s)?:[^\"]+"  > ./sources_mirrors.list
+# all mirror site: wget -q -O- https://launchpad.net/ubuntu/+archivemirrors  | grep -P -B8 "status(UP|SIX)" | grep -o -P "(f|ht)tp(s)?:[^\"]+"  > ./sources_mirrors.list
+http://mirrors.ustc.edu.cn/ubuntu/
+http://mirrors.zju.edu.cn/ubuntu/
+http://mirrors.hustunique.com/ubuntu/
 http://cn.archive.ubuntu.com/ubuntu/
 http://run.hit.edu.cn/ubuntu/
 http://mirrors.sohu.com/ubuntu/
